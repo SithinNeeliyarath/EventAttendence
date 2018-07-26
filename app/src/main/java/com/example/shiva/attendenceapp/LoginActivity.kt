@@ -2,6 +2,7 @@ package com.example.shiva.attendenceapp
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_login.*
@@ -75,7 +76,13 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
                     400 -> {
-
+                        AlertDialog.Builder(this@LoginActivity)
+                                .setTitle("Error..")
+                                .setMessage("An error occured!")
+                                .setNeutralButton("OK"){dialog, which ->
+                                    dialog.dismiss()
+                                }
+                                .show()
                     }
                     404 -> {
 
