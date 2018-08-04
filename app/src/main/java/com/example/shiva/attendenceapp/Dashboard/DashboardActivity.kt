@@ -6,27 +6,36 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.example.shiva.attendenceapp.Dashboard.Fragments.AddMemberFragment
 import com.example.shiva.attendenceapp.Dashboard.Fragments.HomeFragment
+import com.example.shiva.attendenceapp.Dashboard.Fragments.MemberListFragment
+import com.example.shiva.attendenceapp.Dashboard.Fragments.QRScanFragment
 import com.example.shiva.attendenceapp.R
 import kotlinx.android.synthetic.main.activity_dashboard.*
 
 class DashboardActivity : AppCompatActivity() {
 
+    val bundle= Bundle()
+
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
                 val homeFragment = HomeFragment()
+                homeFragment.arguments = bundle
                 replaceFragment(homeFragment)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_add_member -> {
-                val homeFragment = AddMemberFragment()
-               // replaceFragment(addMember)
+                val addMember = AddMemberFragment()
+                replaceFragment(addMember)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_scan_qr -> {
+                val qr =QRScanFragment()
+                replaceFragment(qr)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_member_list -> {
+                val memberList = MemberListFragment()
+                replaceFragment(memberList)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -39,7 +48,14 @@ class DashboardActivity : AppCompatActivity() {
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+        bundle.putString("name",intent.getStringExtra("name"))
+        bundle.putString("days",intent.getStringExtra("days"))
+        bundle.putString("date",intent.getStringExtra("date"))
+        bundle.putString("venue",intent.getStringExtra("venue"))
+
         val homeFragment = HomeFragment()
+
+        homeFragment.arguments = bundle
         replaceFragment(homeFragment)
 
     }
