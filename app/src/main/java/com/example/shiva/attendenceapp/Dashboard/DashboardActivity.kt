@@ -10,6 +10,7 @@ import com.example.shiva.attendenceapp.Dashboard.Fragments.MemberListFragment
 import com.example.shiva.attendenceapp.Dashboard.Fragments.QRScanFragment
 import com.example.shiva.attendenceapp.R
 import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.home_fragment.*
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -57,6 +58,7 @@ class DashboardActivity : AppCompatActivity() {
 
         homeFragment.arguments = bundle
         replaceFragment(homeFragment)
+        name.text=bundle.getString("name")
 
     }
 

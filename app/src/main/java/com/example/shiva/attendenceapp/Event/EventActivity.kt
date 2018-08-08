@@ -25,6 +25,8 @@ import org.json.JSONObject
 
 class EventActivity : AppCompatActivity() {
 
+    val bundle =Bundle()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_events)
@@ -85,6 +87,7 @@ class EventActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         MenuInflater(this).inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
+
 
     }
 

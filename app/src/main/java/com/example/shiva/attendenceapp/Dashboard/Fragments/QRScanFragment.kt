@@ -27,7 +27,7 @@ class QRScanFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        handleCameraPermission()
+       // handleCameraPermission()
 
 
         setupQR()
@@ -35,6 +35,7 @@ class QRScanFragment : Fragment() {
 
     fun setupQR() {
         qrCodeView.setQRDecodingEnabled(true)
+        qrCodeView.setBackCamera()
         qrCodeView.setOnQRCodeReadListener { text, points ->
             if (text != qrResult) {
                 //api calling
@@ -44,7 +45,7 @@ class QRScanFragment : Fragment() {
         }
     }
 
-    fun handleCameraPermission() {
+    /*fun handleCameraPermission() {
         Dexter.withActivity(context as AppCompatActivity)
                 .withPermission(Manifest.permission.CAMERA)
                 .withListener(object : PermissionListener {
@@ -58,5 +59,5 @@ class QRScanFragment : Fragment() {
                     override fun onPermissionRationaleShouldBeShown(permission: PermissionRequest?, token: PermissionToken?) {
                     }
                 }).check()
-    }
+    }*/
 }

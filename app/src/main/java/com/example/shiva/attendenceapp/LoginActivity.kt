@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun login() {
         progress.visibility = View.VISIBLE
-
+        button.visibility = View.INVISIBLE
         doAsync {
             val body = FormBody.Builder()
                     .add("username", username.text.toString())
