@@ -58,8 +58,6 @@ class DashboardActivity : AppCompatActivity() {
 
         homeFragment.arguments = bundle
         replaceFragment(homeFragment)
-        name.text=bundle.getString("name")
-
     }
 
     fun replaceFragment(fragment: Fragment) {

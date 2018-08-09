@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.LinearLayout
+import com.example.shiva.attendenceapp.AddEventActivity
 import com.example.shiva.attendenceapp.LoginActivity
 import com.example.shiva.attendenceapp.R
 
@@ -24,8 +25,6 @@ import org.jetbrains.anko.uiThread
 import org.json.JSONObject
 
 class EventActivity : AppCompatActivity() {
-
-    val bundle =Bundle()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -110,4 +109,7 @@ class EventActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    fun floatingClick(){
+        startActivity(intentFor<AddEventActivity>())
+    }
 }

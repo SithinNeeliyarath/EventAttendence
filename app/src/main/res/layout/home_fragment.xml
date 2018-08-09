@@ -5,22 +5,63 @@
     android:orientation="vertical"
     android:layout_margin="8dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/pc"
+        android:layout_marginLeft="5dp"/>
     <TextView
         android:id="@+id/name"
         android:text="Name"
         android:textColor="#d81872"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="150dp"
-        android:id="@+id/date"
-        android:text="Date"
-        android:textSize="20sp"
-        android:textColor="#d81818"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/location"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:text="Venue"
+            android:textColor="#e35f18"
+            android:id="@+id/venue"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <Button
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/date"
+            android:layout_marginLeft="5dp"/>
+        <TextView
+            android:layout_margin="5dp"
+            android:id="@+id/date"
+            android:text="Date"
+            android:textSize="20sp"
+            android:textColor="#d81818"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
     <TextView
         android:layout_marginTop="20dp"
         android:id="@+id/days"
@@ -30,14 +71,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:text="Venue"
-        android:layout_marginLeft="150dp"
-        android:textColor="#e35f18"
-        android:id="@+id/venue"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
 
 </LinearLayout>
